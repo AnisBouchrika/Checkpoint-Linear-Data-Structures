@@ -1,0 +1,60 @@
+ALGORITHM Checkpoint Linear Data Structures problem_1
+VAR
+sum : INTEGER
+set_1 : ARRAY_OF  INTEGER[];
+set_2 : ARRAY_OF  INTEGER[];
+distinct ARRAY_OF INTEGER[];
+i,j : INTEGER
+BEGIN
+sum := 0
+// Compare set1 with set2
+FOR i FROM 0 TO set_1.length -1  DO
+    FOR j FROM 0 TO set_2.length-1  DO
+        IF (set_1[i] <> set_2[j]) THEN
+            IF(set_1[i] not in disctinct) THEN
+                distinct.add(set_1[i])
+            END_IF
+        END_IF 
+    END_FOR
+END_FOR
+// compare Set2 with Set1
+FOR i FROM 0 TO set_2.length -1  DO
+    FOR j FROM 0 TO set_1.length-1  DO
+        IF (set_1[i] <> set_2[j]) THEN
+            IF(set_2[i] not in disctinct) THEN
+                distinct.add(set_2[i])
+            END_IF
+        END_IF 
+    END_FOR
+END_FOR
+FOR i FROM 0 TO distinct.length DO
+    sum:= sum + distinct[i] 
+END_FOR
+write(sum_distinct)
+END
+------------------------------------------------------
+ALGORITHM Checkpoint Linear Data Structures problem_2
+VAR
+sum : INTEGER
+set_1 : ARRAY_OF  INTEGER[];
+set_2 : ARRAY_OF  INTEGER[];
+distinct ARRAY_OF INTEGER[];
+i,j : INTEGER
+BEGIN
+sum := 0
+FOR i FROM 0 TO set_1.length -1  DO
+    FOR j FROM 0 TO set_2.length-1  DO
+        IF (set_1[i] = set_2[j]) THEN
+            IF(set_1[i] not in disctinct) THEN
+                distinct.add(set_1[i])
+            END_IF
+        END_IF 
+    END_FOR
+END_FOR
+FOR i FROM 0 TO distinct.length DO
+    sum:= sum + distinct[i]*2
+END_FOR
+write(sum_distinct)
+
+
+END
